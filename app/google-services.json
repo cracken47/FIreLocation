@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "407768456928",
+    "firebase_url": "https://firelocation-2bcfd.firebaseio.com",
+    "project_id": "firelocation-2bcfd",
+    "storage_bucket": "firelocation-2bcfd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407768456928:android:26588587d36481242afa85",
+        "android_client_info": {
+          "package_name": "com.karan.firelocation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "407768456928-a1je3d5hbb0900p03om0ddivuk3lvoeo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.karan.firelocation",
+            "certificate_hash": "cadb319f27934eb5dc1150f33a4d9989ce901e00"
+          }
+        },
+        {
+          "client_id": "407768456928-7tj21bl41f9pm8tintp5s873gmurhvf3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2GSVB7Ob_z3SB1dyqf3L4jDN0FRyYDbc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "407768456928-7tj21bl41f9pm8tintp5s873gmurhvf3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

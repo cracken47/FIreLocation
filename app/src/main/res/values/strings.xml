@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">FIreLocation</string>
+    <string name="web_client_id">407768456928-7tj21bl41f9pm8tintp5s873gmurhvf3.apps.googleusercontent.com</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="action_settings">Settings</string>
+        
+    <string name="hello_world">Tap two locations in the map</string>
+        
+    <string name="str_tv_distance_time">Distance</string>
+    <string name="get_direction">Get Direction</string>
+    <string name="distance">Distance :-</string>
+    <string name="tap_on_any_location_to_view_route_and_distance">TAP ON ANY LOCATION TO VIEW ROUTE AND DISTANCE</string>
+    <string name="go_to_profile">Go To Profile</string>
+    <string name="maps">Maps</string>
+    <string name="logout_from_profile">LogOut from Profile</string>
+    <string name="go_to_places_let_s_find_a_way">Go to Places, Let\'s find a way</string>
+    <string name="welcome">WELCOME</string>
+</resources>
