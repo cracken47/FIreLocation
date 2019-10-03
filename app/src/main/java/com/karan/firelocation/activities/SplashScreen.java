@@ -29,13 +29,13 @@ public class SplashScreen extends AppCompatActivity {
                 @Override
                 public void run() {
                     if (SavedSharedPreferences.getFirebaseid(SplashScreen.this.getApplicationContext()).length() == 0) {
-                        Intent i = new Intent(SplashScreen.this.getApplicationContext(), UserActivity.class);
+                        Intent i = new Intent(SplashScreen.this.getApplicationContext(), MainActivity.class);
                         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         SplashScreen.this.startActivity(i);
                         SplashScreen.this.finish();
                     } else {
                         //TODO start CategoryActivity here
-                        SplashScreen.this.startActivity(new Intent(SplashScreen.this.getApplicationContext(), MainActivity.class));
+                        SplashScreen.this.startActivity(new Intent(SplashScreen.this.getApplicationContext(), UserActivity.class));
                         SplashScreen.this.finish();
                     }
                 }

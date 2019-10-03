@@ -15,4 +15,5 @@
     <string name="logout_from_profile">LogOut from Profile</string>
     <string name="go_to_places_let_s_find_a_way">Go to Places, Let\'s find a way</string>
     <string name="welcome">WELCOME</string>
+    <string name="permission">Permission Required</string>
 </resources>

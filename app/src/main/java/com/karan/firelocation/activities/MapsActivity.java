@@ -1,15 +1,19 @@
 package com.karan.firelocation.activities;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -23,6 +27,7 @@ import com.google.android.gms.maps.model.PolylineOptions;
 import com.karan.firelocation.R;
 import com.karan.firelocation.Utilities.LocationFinder;
 import com.karan.firelocation.Utilities.MapsService;
+import com.karan.firelocation.Utilities.PermissionUtils;
 import com.karan.firelocation.directionapi.FetchURL;
 import com.karan.firelocation.directionapi.TaskLoadedCallback;
 import com.karan.firelocation.models.GoogleAddress;
@@ -46,6 +51,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private double lat1 = 0.0;
     private double long1 = 0.0;
     private Location dest = new Location("pointA");
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -141,6 +147,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         Log.d("mylog", "Added Markers");
+        enableMyLocation();
         mMap.addMarker(place1);
         mMap.addMarker(place2);
         LatLng coordinate = new LatLng(latitude, longitude);
@@ -187,6 +194,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 String distance = response.body().getRows().get(0).getElements().get(0).getDistance().getText();
                 String originAddress = String.valueOf((response.body().getOriginAddresses()));
                 getDirection.setText(getString(R.string.distance) + distance);
+                Toast.makeText(getApplicationContext(), "Tap on distance to see route", Toast.LENGTH_SHORT).show();
 
 
             }
@@ -196,6 +204,18 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             }
         });
+    }
+    private void enableMyLocation() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            // Permission to access the location is missing.
+            PermissionUtils.requestPermission(this, LOCATION_PERMISSION_REQUEST_CODE,
+                    Manifest.permission.ACCESS_FINE_LOCATION, true);
+        } else if (mMap != null) {
+            // Access to the location has been granted to the app.
+            mMap.setMyLocationEnabled(true);
+
+        }
     }
 
     @Override
